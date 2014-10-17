@@ -5,7 +5,18 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Archersys.github.io : The Website">
-<script src="https://apis.google.com/js/client:platform.js" async defer></script>
+<script src="https://apis.google.com/js/client:platform.js?onload=render" async defer>
+/* Executed when the APIs finish loading */
+function render() {
+
+  // Additional params
+  var additionalParams = {
+    'theme' : 'dark'
+  };
+
+  gapi.signin.render('signinButton', additionalParams);
+}
+</script>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 <script>
   function signinCallback(authResult) {
