@@ -1,13 +1,8 @@
-$tileWidth: 240px;
-$tileHeight: 200px;
-$secondaryTextColor: #888;
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 * {
   box-sizing: border-box;
 }
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url(http://weloveiconfonts.com/api/?family=entypo);
 
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -30,104 +25,93 @@ button {
 .install {
   text-transform: uppercase;
   width: 100px;
-  span {
-    margin-right: 5px;
-  }
+}
+.install span {
+  margin-right: 5px;
 }
 
 .product-grid {
   display: -webkit-flex;
   -webkit-justify-content: center;
   margin-top: 20px;
-  min-width: $tileWidth * 4;
-  & > .product {
-    margin-left: -1px;
-  }
-  & > .product:nth-child(1) {
-    margin-left: 0;
-  }
+  min-width: 960px;
+}
+.product-grid > .product {
+  margin-left: -1px;
+}
+.product-grid > .product:nth-child(1) {
+  margin-left: 0;
 }
 
 .product {
-  width: $tileWidth;
-  height: $tileHeight;
+  width: 240px;
+  height: 200px;
   overflow: hidden;
   border: solid #ccc 1px;
-  &:hover {
-    cursor: pointer;
-  }
-
-  &:hover .cover {
-    margin-top: -200px;
-    transition: all 0.2s;
-    transition-delay: 0.4s; 
-  }
-
-  .slide {
-    padding: 20px;
-    width: $tileWidth;
-    height: $tileHeight;
-    min-height: $tileHeight;
-  }
-
-  .title {
-    font-size: 13px;
-  }
-
-  .cover {
-    margin-top: 0px;
-    transition: all 0.2s;
-  
-    .banner {
-      width: 220px;
-      height: 140px;
-      margin-bottom: 5px;
-      margin-left: -10px;
-      margin-top: -10px;
-    }
-    .title {
-      width: 75%;
-      float: left;
-    }
-    .meta {
-      font-size: 11px;
-      color: $secondaryTextColor;
-      width: 75%;
-    }
-  }
-
-  .details {
-    background-color: #efefef;
-    display: -webkit-flex;
-    -webkit-flex-flow: column;
-  
-    .header {
-      width: 100%;
-      float: left;
-      margin-bottom: 10px;
-      .title, .ratings {
-        width: 75%;
-      }
-      .ratings {
-        font-size: 11px;
-      }
-      .ratings .stars {
-        margin-right: 5px;
-      }
-      .ratings .count {
-        color: $secondaryTextColor;
-      }
-      .icon {
-        float: right; 
-      }
-    }
-    
-    .description {}
-
-    .actions {
-      margin-top: auto; // stick to the bottom
-      text-align: center;
-    }
-  }
 }
+.product:hover {
+  cursor: pointer;
+}
+.product:hover .cover {
+  margin-top: -200px;
+  transition: all 0.2s;
+  transition-delay: 0.4s;
+}
+.product .slide {
+  padding: 20px;
+  width: 240px;
+  height: 200px;
+  min-height: 200px;
+}
+.product .title {
+  font-size: 13px;
+}
+.product .cover {
+  margin-top: 0px;
+  transition: all 0.2s;
+}
+.product .cover .banner {
+  width: 220px;
+  height: 140px;
+  margin-bottom: 5px;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.product .cover .title {
+  width: 75%;
+  float: left;
+}
+.product .cover .meta {
+  font-size: 11px;
+  color: #888888;
+  width: 75%;
+}
+.product .details {
+  background-color: #efefef;
+  display: -webkit-flex;
+  -webkit-flex-flow: column;
+}
+.product .details .header {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+.product .details .header .title, .product .details .header .ratings {
+  width: 75%;
+}
+.product .details .header .ratings {
+  font-size: 11px;
+}
+.product .details .header .ratings .stars {
+  margin-right: 5px;
+}
+.product .details .header .ratings .count {
+  color: #888888;
+}
+.product .details .header .icon {
+  float: right;
+}
+.product .details .actions {
+  margin-top: auto;
+  text-align: center;
 }
