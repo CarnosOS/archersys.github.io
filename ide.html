@@ -14,10 +14,10 @@
   <!-- Load the utility library. -->
   <script type="text/javascript"
           src="realtime-client-utils.js"></script>
-<script src="" type="text/javascript" charset="utf-8"></script></script>
-     <script>
-  
-</script>
+
+     
+  <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 
 <!-- Start Realtime when the body has loaded. -->
@@ -73,6 +73,10 @@
 
       // Keeping one box updated with a custom EventListener.
       var textArea2 = document.getElementById('editor2');
+    var editor = ace.edit("editor1");
+    var editor2 = ace.edit("editor2");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
       var updateTextArea2 = function(e) {
            
         textArea2.value = string;
