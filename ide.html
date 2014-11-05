@@ -93,7 +93,7 @@
      
       var updateTextArea2 = function(e) {
            
-        textArea2.text = string;
+        textArea2.value = string;
       };
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_INSERTED, updateTextArea2);
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_DELETED, updateTextArea2);
