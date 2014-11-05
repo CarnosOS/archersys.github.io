@@ -14,49 +14,23 @@
   <!-- Load the utility library. -->
   <script type="text/javascript"
           src="realtime-client-utils.js"></script>
-   
-  
-<script src="https://tinymce.cachefly.net/4.1/tinymce.min.js"></script>
-
+     <style type="text/css" media="screen">
+body {
+overflow: hidden;
+}
+#editor {
+margin: 0;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+}
+</style>
+ <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
-
-tinymce.init({
-    selector: "#editor1",
-    theme: "modern",
-    plugins: [
-        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-        "searchreplace wordcount visualblocks visualchars code fullscreen",
-        "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste textcolor colorpicker textpattern"
-    ],
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons",
-    image_advtab: true,
-    templates: [
-        {title: 'Test template 1', content: 'Test 1'},
-        {title: 'Test template 2', content: 'Test 2'}
-    ]
-    
-});
-  tinymce.init({
-    selector: "#editor2",
-    theme: "modern",
-    plugins: [
-        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
-        "searchreplace wordcount visualblocks visualchars code fullscreen",
-        "insertdatetime media nonbreaking save table contextmenu directionality",
-        "emoticons template paste textcolor colorpicker textpattern"
-    ],
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons",
-    image_advtab: true,
-    templates: [
-        {title: 'Test template 1', content: 'Test 1'},
-        {title: 'Test template 2', content: 'Test 2'}
-    ]
-});
+   
 </script>
-
 </head>
 
 <!-- Start Realtime when the body has loaded. -->
@@ -71,16 +45,15 @@ tinymce.init({
   browsers</a> and they will remain synchronized.</p>
 
   <!-- Text areas that will be used as our collaborative controls. -->
-<textarea id="editor1" rows="15" cols="50" disabled="true"></textarea>
-  <textarea id="editor2" rows="15" cols="50" disabled="true"></textarea>
-
+  <textarea id="editor1"  disabled="true"></textarea>
+  <textarea id="editor1"  disabled="true"></textarea>
   <br />
 
   <!-- Undo and redo buttons. -->
   <button id="undoButton" disabled>Undo</button>
   <button id="redoButton" disabled>Redo</button>
 
-  <script type="text/javascript">
+  <script>
   
     /**
      * This function is called the first time that the Realtime model is created
@@ -106,20 +79,20 @@ tinymce.init({
       var string = doc.getModel().getRoot().get('text');
 
       // Keeping one box updated with a String binder.
-      var textArea1 = tinymce.editors["editor1"];
+      var textArea1 = document.getElementById('editor1');
       gapi.drive.realtime.databinding.bindString(string, textArea1);
 
       // Keeping one box updated with a custom EventListener.
-      var textArea2 = tinymce.editors['editor2'];
-     
+      var textArea2 = document.getElementById('editor2');
+       
       var updateTextArea2 = function(e) {
            
-        textArea2.setContent(string);
+        textArea2.text = string;
       };
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_INSERTED, updateTextArea2);
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_DELETED, updateTextArea2);
       textArea2.onkeyup = function() {
-        string.setText(textArea2.getContent());
+        string.setText(textArea2.value);
       };
       updateTextArea2();
 
@@ -198,8 +171,6 @@ tinymce.init({
        */
       afterAuth: function(){
            alert("Welcome To The BIRD-Driven ArcherSys Dev IDE!");
-           
-
       } // No action.
     }
 
