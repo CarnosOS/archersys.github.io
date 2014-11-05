@@ -15,8 +15,9 @@
   <script type="text/javascript"
           src="realtime-client-utils.js"></script>
    
-   
-</script>
+  
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+
 </head>
 
 <!-- Start Realtime when the body has loaded. -->
@@ -71,12 +72,7 @@
 
       // Keeping one box updated with a custom EventListener.
       var textArea2 = document.getElementById('editor2');
-        var editor = ace.edit("editor1");
-    var editor2 = ace.edit("editor2");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-      editor2.setTheme("ace/theme/monokai");
-    editor2.getSession().setMode("ace/mode/javascript");
+     
       var updateTextArea2 = function(e) {
            
         textArea2.text = string;
@@ -163,6 +159,24 @@
        */
       afterAuth: function(){
            alert("Welcome To The BIRD-Driven ArcherSys Dev IDE!");
+           tinymce.init({
+    selector: "textarea",
+    theme: "modern",
+    plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "emoticons template paste textcolor colorpicker textpattern"
+    ],
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    toolbar2: "print preview media | forecolor backcolor emoticons",
+    image_advtab: true,
+    templates: [
+        {title: 'Test template 1', content: 'Test 1'},
+        {title: 'Test template 2', content: 'Test 2'}
+    ]
+});
+
       } // No action.
     }
 
