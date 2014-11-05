@@ -37,8 +37,8 @@
   browsers</a> and they will remain synchronized.</p>
 
   <!-- Text areas that will be used as our collaborative controls. -->
-  <textarea id="editor1" rows="15" cols="50" disabled="true"></textarea>
-  <textarea id="editor2" rows="15" cols="50" disabled="true"></textarea>
+  <div id="editor1" rows="15" cols="50" disabled="true"></textarea>
+  <div id="editor2" rows="15" cols="50" disabled="true"></textarea>
   <br />
 
   <!-- Undo and redo buttons. -->
@@ -46,8 +46,8 @@
   <button id="redoButton" disabled>Redo</button>
 
   <script>
-    var editor = ace.edit("textarea#editor1");
-      var editor2 = ace.edit("textarea#editor2");
+    var editor = ace.edit("editor1");
+      var editor2 = ace.edit("editor2");
    
     /**
      * This function is called the first time that the Realtime model is created
