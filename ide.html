@@ -1,10 +1,12 @@
      
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
   <title>Google Drive Realtime quickstart</title>
+  <style>
+       
+  </style>
   <meta http-equiv="X-UA-Compatible" content="IE=9">
 
   <!-- Load the Realtime libraries. -->
@@ -19,7 +21,8 @@
 <!-- Start Realtime when the body has loaded. -->
 <body onLoad='startRealtime()'>
 
-  <h1>Drive Realtime API :: quickstart</h1>
+  <h1 id="asos-web-header">ArcheRsys Developer IDE
+  </h1>
 
   <button id="authorizeButton" disabled>You must authorize</button>
 
@@ -126,7 +129,7 @@
       /**
        * The name of newly created Drive files.
        */
-      defaultTitle: "New Realtime Quickstart File",
+      defaultTitle: "New Realtime Dev File",
 
       /**
        * The MIME type of newly created Drive Files. By default the application
@@ -149,7 +152,7 @@
        * Function to be called after authorization and before loading files.
        */
       afterAuth: function(){
-           alert("Welcome To The BIRD-Driven ArcheRsys Dev IDE!")
+           alert("Welcome To The BIRD-Driven ArcherSys Dev IDE!")
       } // No action.
     }
 
