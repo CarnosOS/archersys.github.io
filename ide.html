@@ -41,6 +41,12 @@
   <button id="redoButton" disabled>Redo</button>
 
   <script>
+    var editor = ace.edit("editor1");
+      var editor2 = ace.edit("editor2");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+     editor2.setTheme("ace/theme/monokai");
+    editor2.getSession().setMode("ace/mode/javascript");
     /**
      * This function is called the first time that the Realtime model is created
      * for a file. This function should be used to initialize any values of the
@@ -71,12 +77,7 @@
       // Keeping one box updated with a custom EventListener.
       var textArea2 = document.getElementById('editor2');
       var updateTextArea2 = function(e) {
-             var editor = ace.edit("editor1");
-      var editor2 = ace.edit("editor2");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-     editor2.setTheme("ace/theme/monokai");
-    editor2.getSession().setMode("ace/mode/javascript");
+           
         textArea2.value = string;
       };
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_INSERTED, updateTextArea2);
