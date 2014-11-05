@@ -18,7 +18,9 @@
   
 <script src="https://tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 
-<script>tinymce.init({
+<script>
+tinymce.EditorManager.init();
+tinymce.init({
     selector: "#editor1",
     theme: "modern",
     plugins: [
@@ -59,7 +61,7 @@
   <button id="undoButton" disabled>Undo</button>
   <button id="redoButton" disabled>Redo</button>
 
-  <script>
+  <script type="text/javascript">
   
     /**
      * This function is called the first time that the Realtime model is created
@@ -85,7 +87,7 @@
       var string = doc.getModel().getRoot().get('text');
 
       // Keeping one box updated with a String binder.
-      var textArea1 = document.getElementById('editor1');
+      var textArea1 = tinymce.
       gapi.drive.realtime.databinding.bindString(string, textArea1);
 
       // Keeping one box updated with a custom EventListener.
