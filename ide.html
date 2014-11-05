@@ -19,7 +19,7 @@
 <script src="https://tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 
 <script>
-tinymce.EditorManager.init();
+
 tinymce.init({
     selector: "#editor1",
     theme: "modern",
@@ -87,7 +87,7 @@ tinymce.init({
       var string = doc.getModel().getRoot().get('text');
 
       // Keeping one box updated with a String binder.
-      var textArea1 = tinymce.
+      var textArea1 = tinymce.editors["editor1"];
       gapi.drive.realtime.databinding.bindString(string, textArea1);
 
       // Keeping one box updated with a custom EventListener.
