@@ -44,9 +44,8 @@ right: 0;
   <p>These text areas are on the same page. You can also <a target="_blank" href="#">open them on separate users'
   browsers</a> and they will remain synchronized.</p>
 
-  <!-- Text areas that will be used as our collaborative controls. -->
-  <textarea id="editor1"  disabled="true"></textarea>
-  <textarea id="editor2"  disabled="true"></textarea>
+ <textarea id="editor1" rows="15" cols="50" disabled="true"></textarea>
+  <textarea id="editor2" rows="15" cols="50" disabled="true"></textarea>
   <br />
 
   <!-- Undo and redo buttons. -->
@@ -54,7 +53,6 @@ right: 0;
   <button id="redoButton" disabled>Redo</button>
 
   <script>
-  
     /**
      * This function is called the first time that the Realtime model is created
      * for a file. This function should be used to initialize any values of the
@@ -84,10 +82,8 @@ right: 0;
 
       // Keeping one box updated with a custom EventListener.
       var textArea2 = document.getElementById('editor2');
-       
       var updateTextArea2 = function(e) {
-           
-        textArea2.text = string;
+        textArea2.value = string;
       };
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_INSERTED, updateTextArea2);
       string.addEventListener(gapi.drive.realtime.EventType.TEXT_DELETED, updateTextArea2);
@@ -99,7 +95,7 @@ right: 0;
       // Enabling UI Elements.
       textArea1.disabled = false;
       textArea2.disabled = false;
-       
+
       // Add logic for undo button.
       var model = doc.getModel();
       var undoButton = document.getElementById('undoButton');
@@ -147,14 +143,14 @@ right: 0;
       /**
        * The name of newly created Drive files.
        */
-      defaultTitle: "New Realtime Dev File",
+      defaultTitle: "New Realtime Quickstart File",
 
       /**
        * The MIME type of newly created Drive Files. By default the application
        * specific MIME type will be used:
        *     application/vnd.google-apps.drive-sdk.
        */
-      newFileMimeType: null, // Using default.
+      newFileMimeType: "text/plain", // Using text/plain for MD Files.
 
       /**
        * Function to be called every time a Realtime file is loaded.
@@ -169,9 +165,7 @@ right: 0;
       /**
        * Function to be called after authorization and before loading files.
        */
-      afterAuth: function(){
-           alert("Welcome To The BIRD-Driven ArcherSys Dev IDE!");
-      } // No action.
+      afterAuth: null // No action.
     }
 
     /**
