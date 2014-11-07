@@ -35,7 +35,7 @@
   function signinCallback(authResult) {
 function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
-    
+    $("<button onclick=\"TogetherJS(this); return false;\">Start TogetherJS</button>")
      
     document.getElementById('signinButton').setAttribute('style', 'display: none');
      TogetherJS(this);
