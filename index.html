@@ -15,7 +15,7 @@
   <script type="text/javascript"
           src="realtime-client-utils.js"></script>
     <meta name="description" content="Archersys.github.io : The Website">
-    
+    <script src="togetherjs-min.js"></script>
     <meta name="google-signin-clientid" content="601913270428-448oivaoj4262vsq0qrr4qv6qeo188kv.apps.googleusercontent.com" />
 <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
 <meta name="google-signin-requestvisibleactions" content="http://schema.org/AddAction" />
@@ -35,9 +35,11 @@
   function signinCallback(authResult) {
 function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
-    // Update the app to reflect a signed in user
-    // Hide the sign-in button now that the user is authorized, for example:
+    
+     
     document.getElementById('signinButton').setAttribute('style', 'display: none');
+     TogetherJS(this);
+     return false;
   } else {
     // Update the app to reflect a signed out user
     // Possible error values:
