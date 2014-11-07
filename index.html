@@ -37,6 +37,8 @@
  <script src="togetherjs-min.js"></script>
 <script>
   
+     TogetherJSConfig_hubBase="http://bird-c9-acosf.c9.io";
+     TogetherJSConfig_toolName = "BIRD";
 </script>
 
 <script>
@@ -44,8 +46,6 @@
 function signinCallback(authResult) {
   if (authResult['status']['signed_in']) {
     
-     TogetherJSConfig_hubBase="http://bird-c9-acosf.c9.io";
-     TogetherJSConfig_toolName = "BIRD";
     document.getElementById('signinButton').setAttribute('style', 'display: none');
    
   } else {
