@@ -74,6 +74,20 @@ function render() {
 
     <title>Archersys.github.io</title>
     <script>
+      // Authenticate via OAuth
+var tumblr = require('tumblr.js');
+var client = tumblr.createClient({
+  consumer_key: 'xebwlvxVNl9PdQmqcho2T5TD2RAqayXfEJknwASBV6cV63imnF',
+  consumer_secret: 'c5YlLUhxK93RRgr2F97b8Lvnq04l0wgJ2ukxevAqG3kiicWGzg',
+  token: 'YVSAbZJOD4gCIhVRDgWbqh3Kz747gRkZXB1YwR9FJV5UVBgjA5',
+  token_secret: 'h6fNVQ3LM8eFNeUeC1Hb7q397hwPoVUHbZbSQyjYgfxGqlIrWg'
+});
+
+// Make the request
+client.userInfo(function (err, data) {
+}
+    </script>
+    <script>
     var _roost = _roost || [];
     _roost.push(['autoprompt', true]);
 </script>
