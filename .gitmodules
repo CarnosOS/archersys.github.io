@@ -4,3 +4,7 @@ url = https://github.com/ajaxorg/ace-builds.git
 [submodule "Comanquer"]
 	path = Comanquer
 	url = https://github.com/ArcherSys/Comanquer
+[submodule "SilverTickPro"]
+	path =STP
+	url = https://github.com/ArcherSys/SilverTickPro
+
