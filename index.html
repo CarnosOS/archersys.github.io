@@ -59,6 +59,8 @@ function signinCallback(authResult) {
 }
 </script>
 <script src="https://apis.google.com/js/client:platform.js?onload=render" async defer>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 /* Executed when the APIs finish loading */
 function render() {
 
@@ -138,8 +140,18 @@ client.userInfo(function (err, data) {
 <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 
 
-  <iframe src='https://acosf.makes.org/popcorn/2fb7_' width='560' height='358' frameborder='0' mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe>
+  <iframe src='https://acosf.makes.org/popcorn/2fb7_' width='720' height='358' frameborder='0' mozallowfullscreen webkitallowfullscreen allowfullscreen></iframe>
     
+<!-- Place this tag where you want the widget to render. -->
+<div class="g-page" data-href="//plus.google.com/u/0/114657577319697970021" data-theme="dark" data-rel="publisher"></div>
 
+<!-- Place this tag after the last widget tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
   </body>
 </html>
