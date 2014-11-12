@@ -1,11 +1,27 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Contribute to ArcherSys</title>
+<title>Contribute to ArcherSys...</title>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/dark-hive/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script>
+  $(function(){
+    $("#contribute").tabs();
+  })
+</script>
 </head>
 <body>
+  <div id="contribute">
+    <ul>
+      <li><a href="#thunderclap">via Thunderclap</a></li>
+      <li><a href="#gplus">via Google Plus</a></li>
+    </ul>
+    <div id="thunderclap">
 <iframe frameborder='0' height='540px' src='https://www.thunderclap.it/projects/18704-archersys-os/embed' width='250px'></iframe>
-<div class="g-page" data-href="//plus.google.com/u/0/114657577319697970021" data-theme="dark" data-rel="publisher"></div>
+</div>
+<div id="gplus"><div class="g-page"  data-href="//plus.google.com/u/0/114657577319697970021" data-theme="dark" data-rel="publisher"></div>
+</div>
 
 <!-- Place this tag after the last widget tag. -->
 <script type="text/javascript">
@@ -15,6 +31,6 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-  
+  </div>
 </body>
 </html>
