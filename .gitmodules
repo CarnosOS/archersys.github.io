@@ -7,7 +7,5 @@ url = https://github.com/ajaxorg/ace-builds.git
 [submodule "SilverTickPro"]
 	path =STP
 	url = https://github.com/ArcherSys/SilverTickPro
-	[submodule "zipextractor"]
-	   path = zipextractor
-	   url = "https://github.com/googledrive/zipextractor"
+
 
