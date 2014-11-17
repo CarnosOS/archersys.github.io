@@ -79,7 +79,7 @@
 
   var styleSheet = "/togetherjs/togetherjs.css";
 
-  var baseUrl = "https://bird-c9-acosf.c9.io";
+  var baseUrl = "";
   if (baseUrl == "__" + "baseUrl__") {
     // Reset the variable if it doesn't get substituted
     baseUrl = "";
@@ -539,7 +539,7 @@
     return "TogetherJS";
   };
 
-  var defaultHubBase = "https://hub.togetherjs.com";
+  var defaultHubBase = "http://https://bird-c9-acosf.c9.io:8080";
   if (defaultHubBase == "__" + "hubUrl"+ "__") {
     // Substitution wasn't made
     defaultHubBase = "https://hub.togetherjs.mozillalabs.com";
