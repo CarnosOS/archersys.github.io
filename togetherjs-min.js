@@ -539,7 +539,7 @@
     return "TogetherJS";
   };
 
-  var defaultHubBase = "https://bird-acosf.c9.io";
+  var defaultHubBase = "https://bird-acosf.c9.io:8080";
   if (defaultHubBase == "__" + "hubUrl"+ "__") {
     // Substitution wasn't made
     defaultHubBase = "https://hub.togetherjs.mozillalabs.com";
