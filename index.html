@@ -38,6 +38,7 @@ TogetherJSConfig_toolName = "BIRD";
 function signinCallback(authResult) {
 if (authResult['status']['signed_in']) {
 document.getElementById('signinButton').setAttribute('style', 'display: none');
+apiClientLoaded();
 } else {
 // Update the app to reflect a signed out user
 // Possible error values:
@@ -183,7 +184,7 @@ s.parentNode.insertBefore(gcse, s);
   /**
    * Handler for the signin callback triggered after the user selects an account.
    */
- =
+ 
 
   /**
    * Sets up an API call after the Google API client loads.
